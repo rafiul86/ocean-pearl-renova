@@ -1,5 +1,6 @@
 import React from 'react';
 import Admin from './Admin/Admin';
+import AllOrders from './AllOrders/AllOrders';
 import Sidebar from './Sidebar/Sidebar';
 
 const Dashboard = () => {
@@ -9,7 +10,7 @@ const Dashboard = () => {
             <Sidebar/>
             </div>
             <div className="col-md-8">
-            
+            <AllOrders></AllOrders>
             </div>
         </section>
     );
