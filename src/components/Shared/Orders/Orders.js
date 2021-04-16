@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router';
 import { GlobalContext } from '../../../App';
-import Order from './Order/Order';
+
 
 
 const Orders = () => {
@@ -52,13 +52,6 @@ const Orders = () => {
     <h3>{service.price}</h3>
     <Button variant="contained" color="primary" onClick={handleSubmitOrder}>Confirm Order</Button>
   </div>
- </div>
- <div>
-     <Grid container spacing={4}>
-     {
-         orders.map(order => <Grid item xs={12} md={6} lg={4}> <Order order={order}></Order></Grid>)
-     }
-     </Grid>
  </div>
  </section>
     );
