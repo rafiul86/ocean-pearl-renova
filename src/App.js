@@ -3,7 +3,6 @@ import {  BrowserRouter as Router,  Switch,  Route} from "react-router-dom";
 import { createContext, useState } from 'react';
 import Home from './components/Home/Home/Home/Home';
 import Login from './components/Login/Login'
-
 import Trends from './components/Home/Trends/Trends'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import OurServices from './components/Dashboard/OurServices/OurServices';
@@ -14,6 +13,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Services from './components/Home/Services/Services';
 import Orders from './components/Shared/Orders/Orders';
 import AddServices from './components/Shared/AddServices/AddServices';
+import RemoveService from './components/Dashboard/Admin/RemoveService/RemoveService';
 
 
 
@@ -39,6 +39,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path='/addServices'>
             <AddServices/>
+            </PrivateRoute>
+            <PrivateRoute path='/removeservice'>
+            <RemoveService/>
             </PrivateRoute>
             <PrivateRoute path="/orders/:id">
             <Orders/>

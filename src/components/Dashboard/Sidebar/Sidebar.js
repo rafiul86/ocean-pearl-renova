@@ -6,8 +6,10 @@ const Sidebar = () => {
     return (
         <div class="sidebar">
 <Link to='/dashboard'>Dashboard</Link>
-  <Link to='/allorders'>Orders</Link>
-  <Link to='/admin'>Admin Panel</Link>
+  <Link to='/allorders'>Booking List</Link>
+  <Link to='/reviews'>Add Review</Link>
+  <Link to='/admin'>Add Services</Link>
+  <Link to='/removeservice'>Remove Services</Link>
   </div>
     );
 };

@@ -6,6 +6,7 @@ import Footer from '../../../Shared/Footer/Footer'
 import Specialists from '../../Specialists/Specialists';
 import Trends from '../../Trends/Trends';
 import Connect from '../../Connect/Connect';
+import CustomerReviews from '../../CustomerReviews/CustomerReviews';
 const Home = () => {
     return (
         <div>
@@ -13,6 +14,7 @@ const Home = () => {
             <Header/>
             <Services/>
             <Specialists/>
+            <CustomerReviews/>
             <Trends/>
             <Connect/>
             <Footer/>
