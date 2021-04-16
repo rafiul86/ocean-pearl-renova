@@ -36,8 +36,6 @@ const Google = () => {
     newUser.photo = photoURL
     setUser(newUser)
     setLoggedInUser(newUser)
-    console.log(loggedInUser.email)
-    handleToken()
     history.replace(from)
   }).catch((error) => {
     

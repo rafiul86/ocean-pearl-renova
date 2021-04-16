@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { GlobalContext } from '../../../App';
 import ShowOrder from './ShowOrder/ShowOrder';
 
 const AllOrders = () => {
+    const [loggedInUser ,setLoggedInUser] = useContext(GlobalContext)
     const [orders ,setOrders] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/showOrderHistory')
+        fetch('http://localhost:5000/showOrderHistory',{
+            method : 'POST',
+            headers : {'content-type' : 'application/json'},
+            body : JSON.stringify({email : loggedInUser.email})
+        })
         .then(res =>res.json())
         .then(data => setOrders(data))
     },[])

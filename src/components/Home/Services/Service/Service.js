@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Service = ({service}) => {
   const {name, _id , price, } = service;
-  console.log(_id)
     return (
         <section >
             <div class="card" style={{width: "18rem;"}}>
