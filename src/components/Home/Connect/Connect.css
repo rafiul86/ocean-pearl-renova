@@ -1,0 +1,16 @@
+.contact{
+    position: relative;
+    z-index: 1;
+    background-size: cover;
+}
+.contact::before{
+    position: absolute;
+    content: "";
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color:purple;
+    opacity: .7;
+    z-index: -30;
+    
+}
