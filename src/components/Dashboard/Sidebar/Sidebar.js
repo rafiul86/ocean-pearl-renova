@@ -8,7 +8,8 @@ const Sidebar = () => {
 <Link to='/dashboard'>Dashboard</Link>
   <Link to='/allorders'>Booking List</Link>
   <Link to='/reviews'>Add Review</Link>
-  <Link to='/admin'>Add Services</Link>
+  <Link to='/setadmin'>Manage Admin</Link>
+  <Link to='/addservice'>Add Services</Link>
   <Link to='/removeservice'>Remove Services</Link>
   </div>
     );

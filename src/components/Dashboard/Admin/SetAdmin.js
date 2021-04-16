@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Admin = () => {
+const SetAdmin = () => {
     const [info , setInfo] = useState([])
     const [file,setFile] = useState([])
 const handleBlur=(e) =>{
@@ -53,4 +53,4 @@ const handleImageUpload = (e) => {
     );
 };
 
-export default Admin;
+export default SetAdmin;

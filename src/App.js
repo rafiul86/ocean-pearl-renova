@@ -8,12 +8,13 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import OurServices from './components/Dashboard/OurServices/OurServices';
 import Reviews from './components/Dashboard/Reviews/Reviews';
 import CustomerReviews from './components/Home/CustomerReviews/CustomerReviews';
-import Admin from './components/Dashboard/Admin/Admin';
+import SetAdmin from './components/Dashboard/Admin/SetAdmin';
 import Dashboard from './components/Dashboard/Dashboard';
 import Services from './components/Home/Services/Services';
 import Orders from './components/Shared/Orders/Orders';
 import AddServices from './components/Shared/AddServices/AddServices';
 import RemoveService from './components/Dashboard/Admin/RemoveService/RemoveService';
+import AllOrders from './components/Dashboard/AllOrders/AllOrders';
 
 
 
@@ -37,7 +38,7 @@ function App() {
             <PrivateRoute path='/reviews'>
             <Reviews/>
             </PrivateRoute>
-            <PrivateRoute path='/addServices'>
+            <PrivateRoute path='/addservice'>
             <AddServices/>
             </PrivateRoute>
             <PrivateRoute path='/removeservice'>
@@ -49,14 +50,17 @@ function App() {
           <Route path="/trends">
           <Trends/>
           </Route>
+          <Route  path="/allorders">
+          <AllOrders/>
+          </Route>
           <Route path="/customerreviews">
           <CustomerReviews/>
           </Route>
           <Route path="/dashboard">
           <Dashboard/>
           </Route>
-          <Route path="/admin">
-          <Admin/>
+          <Route path="/setadmin">
+          <SetAdmin/>
           </Route>
           <Route path="/login">
           <Login/>
