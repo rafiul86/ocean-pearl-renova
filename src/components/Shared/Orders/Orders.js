@@ -12,13 +12,7 @@ const Orders = () => {
     const [loggedInUser , setLoggedInUser] = useContext(GlobalContext)
     const {id} = useParams()
     const [service ,setService] = useState({})
-    const [orders,setOrders] = useState([])
-
-    useEffect(()=>{
-        fetch('http://localhost:5000/showOrderHistory?email='+loggedInUser.email)
-        .then(res => res.json())
-        .then(data =>setOrders(data) )
-    },[])
+    
     useEffect(()=>{
         fetch(`http://localhost:5000/showOneService/`+id)
         .then(res => res.json())
