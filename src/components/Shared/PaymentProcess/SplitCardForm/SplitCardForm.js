@@ -1,15 +1,10 @@
-import React, { useMemo } from "react";
-import {
-  useStripe,
-  useElements,
-  CardNumberElement,
-  CardCvcElement,
-  CardExpiryElement
-} from "@stripe/react-stripe-js";
+import React, { useMemo, useState } from "react";
+import {  useStripe,  useElements,  CardNumberElement,  CardCvcElement,  CardExpiryElement} from "@stripe/react-stripe-js";
 import '../PaymentProcess'
 import useResponsiveFontSize from '../useResponsiveFontSize';
 import { Button } from "@material-ui/core";
 import '../paymentstyle.css'
+
 const useOptions = () => {
   const fontSize = useResponsiveFontSize();
   const options = useMemo(
@@ -36,6 +31,8 @@ const useOptions = () => {
 };
 
 const SplitCardForm = () => {
+    const [paymentError , setPaymentError] = useState('')
+    const [paymentSuccess , setPaymentSuccess] = useState('')
   const stripe = useStripe();
   const elements = useElements();
   const options = useOptions();
@@ -49,71 +46,40 @@ const SplitCardForm = () => {
       return;
     }
 
-    const payload = await stripe.createPaymentMethod({
+    const {paymentMethod, error} = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardNumberElement)
     });
-    console.log("[PaymentMethod]", payload);
+    if(error){
+        setPaymentError(error)
+        setPaymentSuccess(null);
+    }
+    else{
+        setPaymentSuccess(paymentMethod);
+    setPaymentError(null)
+    console.log(paymentMethod)
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="label-container" >
+    <div>
+        <form onSubmit={handleSubmit} className="label-container" >
       <label >
         Card number
         <CardNumberElement
         className="label-card"
-          options={options}
-          onReady={() => {
-            console.log("CardNumberElement [ready]");
-          }}
-          onChange={event => {
-            console.log("CardNumberElement [change]", event);
-          }}
-          onBlur={() => {
-            console.log("CardNumberElement [blur]");
-          }}
-          onFocus={() => {
-            console.log("CardNumberElement [focus]");
-          }}
         />
       </label>
       <br/>
       <label>
         Expiration date
         <CardExpiryElement className="label"
-          options={options}
-          onReady={() => {
-            console.log("CardNumberElement [ready]");
-          }}
-          onChange={event => {
-            console.log("CardNumberElement [change]", event);
-          }}
-          onBlur={() => {
-            console.log("CardNumberElement [blur]");
-          }}
-          onFocus={() => {
-            console.log("CardNumberElement [focus]");
-          }}
         />
       </label>   
-          <span>       </span>
       <label>
         CVC
         <CardCvcElement
         className="label"
-          options={options}
-          onReady={() => {
-            console.log("CardNumberElement [ready]");
-          }}
-          onChange={event => {
-            console.log("CardNumberElement [change]", event);
-          }}
-          onBlur={() => {
-            console.log("CardNumberElement [blur]");
-          }}
-          onFocus={() => {
-            console.log("CardNumberElement [focus]");
-          }}
         />
       </label>
       <br/>
@@ -121,6 +87,13 @@ const SplitCardForm = () => {
         Pay
       </Button>
     </form>
+    {
+        paymentError && <p style={{color : 'red'}}>{paymentError.message}</p>
+    }
+    {
+        paymentSuccess && <p style={{color : 'green'}}>Your payment is successful and reference is {paymentSuccess.id}</p>
+    }
+    </div>
   );
 };
 
