@@ -1,9 +1,14 @@
 import React,{useState} from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
+import Sidebar from '../../Sidebar/Sidebar';
 
 
-
+const tableStyle = {
+    backgroundColor : 'pink',
+    borderRadius : '5px',
+    // margin : '60px',
+}
 const ShowOrder = ({orders}) => {
     const [value,setValue]=useState('');
 
@@ -23,8 +28,11 @@ const ShowOrder = ({orders}) => {
             }
 
     return (
-        <div> 
-            <div>
+        <div className="row offset-xs-1"> 
+            <div className="col-md-2">
+                <Sidebar/>
+            </div>
+            <div  className="col-md-10 mt-5" style={tableStyle}>
             <table className="table table-responsive">
             <thead>
                 <tr>
@@ -69,7 +77,7 @@ const ShowOrder = ({orders}) => {
                     )
                 }
             </tbody>
-        </table>
+            </table>
             </div>
         </div>
       
