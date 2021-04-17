@@ -8,7 +8,7 @@ const SingleOrder = ({order}) => {
         <Sidebar/>
         </div>
         <div className="col-md-9">
-           <p>Service : {order.name} , Order Date :  {order.OrderDate} Customer Email :   {order.email}, Payment ID : {order.OrderId}  <button style={{color : 'yellowgreen'}}>{order.status}</button>
+           <p>Service : {order.name} , Order Date :  {order.OrderDate} Customer Email :   {order.email}, Payment ID : {order.OrderId}  <button style={{color : 'yellowgreen'}}>{order.status ? order.status : "Pending" }</button>
             </p> 
         </div>
         </div>

@@ -23,7 +23,8 @@ const Sidebar = () => {
         <div class="sidebar">
   <Link to='/pastorders'>Previous Orders</Link>
   <Link to='/reviews'>Rate Our Works</Link>
-  { isAdmin && <div>
+  { isAdmin &&
+   <div>
     <Link to='/allorders'>Manage Order status</Link>
   <Link to='/setadmin'>Manage Admin</Link>
   <Link to='/addservice'>Add Services</Link>

@@ -24,11 +24,8 @@ const ShowOrder = ({order}) => {
 
     return (
         <div>
-            <div>
-           <p>Service : {order.name} , Order Date :  {order.OrderDate} Customer Email :   {order.email}, Payment ID : {order.OrderId}  <button onClick={()=>handleStatus(order._id)}>{order.status}</button> 
+           <p>Service : {order.name} , Order Date :  {order.OrderDate} Customer Email :   {order.email}, Payment ID : {order.OrderId}  <button onClick={()=>handleStatus(order._id)}>Update Status</button> 
             </p> 
-        </div>
-        <div>
             <DropdownButton
       alignRight
       title="Manage Status"
@@ -43,7 +40,7 @@ const ShowOrder = ({order}) => {
               <Dropdown.Divider />
       </DropdownButton>
         </div>
-        </div>
+      
     );
 };
 
