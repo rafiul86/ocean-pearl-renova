@@ -2,14 +2,20 @@ import { Button } from 'bootstrap';
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import Sidebar from '../../Sidebar/Sidebar'
+
+
+const tableStyle = {
+    backgroundColor : 'skyblue',
+    borderRadius : '5px'
+}
 const SingleOrders = ({orders}) => {
     return (
         <div className="row col-xs-1">
             <div className="col-md-2">
             <Sidebar/>
             </div>
-            <div className="col-md-9">
-    <table className="table table-borderless">
+            <div style={tableStyle} className="col-md-9">
+    <table className="table table-responsive">
             <thead>
                 <tr>
                 <th className="text-secondary text-left" scope="col">Sr No</th>
@@ -31,7 +37,7 @@ const SingleOrders = ({orders}) => {
                         <td>{order.OrderDate}</td>
                         <td>{order.email}</td>
                         {
-                         order.status === 'pending'  ? <td style={{backgroundColor : 'red' , height : '7px' , width  : '40px'}}>{order.status}</td> : <td style={{backgroundColor : 'lawngreen' , margin : '2px' , height : '7px' , width  : '100px'}}>{order.status}</td>
+                         order.status === 'pending'  ? <td style={{backgroundColor : 'red' ,borderRadius : '10px', height : '7px' , width  : '30px'}}>{order.status}</td> : <td style={{backgroundColor : 'lawngreen' , borderRadius : '10px' , height : '7px' , width  : '100px'}}>{order.status}</td>
                         }
                     </tr>
                     )
