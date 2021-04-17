@@ -1,18 +1,41 @@
 import React from 'react';
-import Sidebar from '../../Sidebar/Sidebar';
+import { Table } from 'react-bootstrap';
 
-const SingleOrder = ({order}) => {
+const SingleOrders = ({orders}) => {
+    console.log(orders)
     return (
-        <div className="row">
-        <div className="col-md-2">
-        <Sidebar/>
-        </div>
-        <div className="col-md-9">
-           <p>Service : {order.name} , Order Date :  {order.OrderDate} Customer Email :   {order.email}, Payment ID : {order.OrderId}  <button style={{color : 'yellowgreen'}}>{order.status ? order.status : "Pending" }</button>
-            </p> 
-        </div>
+        <div>
+    <table className="table table-borderless">
+            <thead>
+                <tr>
+                <th className="text-secondary text-left" scope="col">Sr No</th>
+                <th className="text-secondary" scope="col">Name</th>
+                <th className="text-secondary" scope="col">Gender</th>
+                <th className="text-secondary" scope="col">Age</th>
+                <th className="text-secondary" scope="col">Weight</th>
+                <th className="text-secondary" scope="col">Phone</th>
+                <th className="text-secondary" scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                  orders.map((order, index) => 
+                        
+                    <tr>
+                        <td>{index + 1}</td>
+                        <td>{order.name}</td>
+                        <td>{order.price}</td>
+                        <td>{order.status}</td>
+                        <td>{order.OrderDate}KG</td>
+                        <td>{order.OrderId}</td>
+                        <td>{order.email}</td>
+                    </tr>
+                    )
+                }
+            </tbody>
+        </table>
         </div>
     );
 };
 
-export default SingleOrder;
+export default SingleOrders;

@@ -4,7 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 
 
-const ShowOrder = ({order}) => {
+const ShowOrder = ({orders}) => {
     const [value,setValue]=useState('');
 
   const handleSelect=(e)=>{
@@ -23,14 +23,40 @@ const ShowOrder = ({order}) => {
             }
 
     return (
-        <div>
-           <p>Service : {order.name} , Order Date :  {order.OrderDate} Customer Email :   {order.email}, Payment ID : {order.OrderId}  <button onClick={()=>handleStatus(order._id)}>Update Status</button> 
-            </p> 
-            <DropdownButton
-      alignRight
-      title="Manage Status"
-      id="dropdown-menu-align-right"
-      onSelect={handleSelect}
+        <div> 
+            <div>
+            <table className="table table-responsive">
+            <thead>
+                <tr>
+                <th className="text-secondary text-left" scope="col">Sr No</th>
+                <th className="text-secondary" scope="col">Name</th>
+                <th className="text-secondary" scope="col">Price</th>
+                <th className="text-secondary" scope="col">Status</th>
+                <th className="text-secondary" scope="col">Date</th>
+                <th className="text-secondary" scope="col">Payment ID</th>
+                <th className="text-secondary" scope="col">Email</th>
+                <th className="text-secondary" scope="col">Change Status</th>
+                <th className="text-secondary" scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                  orders.map((order, index) => 
+                        
+                    <tr>
+                        <td>{index + 1}</td>
+                        <td>{order.name}</td>
+                        <td>{order.price}</td>
+                        <td>{order.status}</td>
+                        <td>{order.OrderDate}KG</td>
+                        <td>{order.OrderId}</td>
+                        <td>{order.email}</td>
+                        <td><button onClick={()=>handleStatus(order._id)}>Update Status</button></td>
+                        <td><DropdownButton
+                        alignRight
+                        title="Manage Status"
+                        id="dropdown-menu-align-right"
+                        onSelect={handleSelect}
         >
               <Dropdown.Item eventKey="pending">Pending</Dropdown.Item>
               <br/>
@@ -38,7 +64,13 @@ const ShowOrder = ({order}) => {
               <br/>
               <Dropdown.Item eventKey="Done">Done</Dropdown.Item>
               <Dropdown.Divider />
-      </DropdownButton>
+      </DropdownButton></td>
+                    </tr>
+                    )
+                }
+            </tbody>
+        </table>
+            </div>
         </div>
       
     );

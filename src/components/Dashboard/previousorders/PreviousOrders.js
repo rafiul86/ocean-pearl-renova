@@ -18,9 +18,7 @@ const PreviousOrders = () => {
     },[])
     return (
         <div>
-            {
-                orders.map(order => <SingleOrder order={order}></SingleOrder>)
-            }
+            <SingleOrder orders={orders}></SingleOrder>
         </div>
     );
 };

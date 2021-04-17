@@ -17,9 +17,7 @@ const AllOrders = () => {
     },[])
     return (
         <div>
-            {
-                orders.map(order => <ShowOrder order={order}></ShowOrder>)
-            }
+                 <ShowOrder orders={orders}></ShowOrder>
         </div>
     );
 };
