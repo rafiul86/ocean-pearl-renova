@@ -1,0 +1,15 @@
+.label{
+    background-color: rgb(222, 211, 226);
+    height: 28px;
+    width : 200px;
+    border-radius: 5px;
+}
+.label-container{
+    background-color: deepskyblue;
+}
+.label-card{
+    background-color: rgb(222, 211, 226);
+    height: 28px;
+    width : 400px;
+    border-radius: 5px;
+}

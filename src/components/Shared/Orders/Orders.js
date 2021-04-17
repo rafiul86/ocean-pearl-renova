@@ -3,12 +3,14 @@ import React from 'react';
 import { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { GlobalContext } from '../../../App';
+import PaymentProcess from '../PaymentProcess/PaymentProcess';
 
 
 
 const Orders = () => {
+    const history = useHistory()
     const [loggedInUser , setLoggedInUser] = useContext(GlobalContext)
     const {id} = useParams()
     const [service ,setService] = useState({})
@@ -19,6 +21,7 @@ const Orders = () => {
         .then(data => setService(data))
     },[])
     const handleSubmitOrder = () =>{
+        
         const orderData ={
             name : service.name,
             price : service.price,
@@ -34,20 +37,25 @@ const Orders = () => {
         .then(res =>{
             console.log('order details saved to database')
         })
-
+        history.push('/allorders') 
     }
     
     return (
-        <section>
- <div class="card" style={{width: "18rem;"}}>
-  <img style={{height : '400px' , width : '400px'}} src={`http://localhost:5000/${service.img}`} class="card-img-top" alt="..."/>
+      <div className="offset-md-2 row ">
+          <div className="col-md-6">
+          <div class="card" style={{width: "18rem;"}}>
+  <PaymentProcess/>
   <div class="card-body">
     <h3>{service.name}</h3>
     <h3>{service.price}</h3>
-    <Button variant="contained" color="primary" onClick={handleSubmitOrder}>Confirm Order</Button>
+    <Button variant="contained" color="primary" onClick={handleSubmitOrder}>Submit</Button>
   </div>
  </div>
- </section>
+          </div>
+          <div className="col-md-6">
+
+          </div>
+      </div>
     );
 };
 
