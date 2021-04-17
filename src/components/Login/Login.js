@@ -36,7 +36,6 @@ const Google = () => {
     newUser.photo = photoURL
     setUser(newUser)
     setLoggedInUser(newUser)
-    handleToken()
     history.replace(from)
   }).catch((error) => {
     
@@ -55,10 +54,6 @@ const Google = () => {
             // An error happened.
           });
     }
-        const handleToken = () =>{
-           sessionStorage.setItem('token' , loggedInUser.email)
-        }
-
     return (
         <div>
           {

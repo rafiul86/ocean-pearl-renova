@@ -1,9 +1,12 @@
-import React, { useMemo, useState } from "react";
+import React, { createContext, useContext, useMemo, useState } from "react";
 import {  useStripe,  useElements,  CardNumberElement,  CardCvcElement,  CardExpiryElement} from "@stripe/react-stripe-js";
 import '../PaymentProcess'
 import useResponsiveFontSize from '../useResponsiveFontSize';
 import { Button } from "@material-ui/core";
 import '../paymentstyle.css'
+import { GlobalContext } from "../../../../App";
+
+
 
 const useOptions = () => {
   const fontSize = useResponsiveFontSize();
@@ -31,8 +34,9 @@ const useOptions = () => {
 };
 
 const SplitCardForm = () => {
-    const [paymentError , setPaymentError] = useState('')
-    const [paymentSuccess , setPaymentSuccess] = useState('')
+    const [loggedInUser , setLoggedInUser] = useContext(GlobalContext)
+    const [paymentError , setPaymentError] = useState(null)
+    const [paymentSuccess , setPaymentSuccess] = useState(null)
   const stripe = useStripe();
   const elements = useElements();
   const options = useOptions();
@@ -56,11 +60,11 @@ const SplitCardForm = () => {
     }
     else{
         setPaymentSuccess(paymentMethod);
+        setLoggedInUser(paymentMethod)
     setPaymentError(null)
-    console.log(paymentMethod)
     }
   };
-
+console.log(paymentSuccess)
   return (
     <div>
         <form onSubmit={handleSubmit} className="label-container" >

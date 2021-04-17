@@ -3,7 +3,7 @@ import React from 'react';
 const ShowOrder = ({order}) => {
     return (
         <div>
-            {order.name} {order.OrderDate} {order.email}
+           <p>Service : {order.name} , Order Date :  {order.OrderDate} Customer Email :   {order.email}, Payment ID : {order.OrderId} </p> 
         </div>
     );
 };
