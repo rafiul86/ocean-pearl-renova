@@ -68,9 +68,9 @@ const ShowOrder = ({orders}) => {
         >
               <Dropdown.Item eventKey="pending">Pending</Dropdown.Item>
               <br/>
-              <Dropdown.Item eventKey="On the Way">On the Way</Dropdown.Item>
+              <Dropdown.Item eventKey="ongoing">On the Way</Dropdown.Item>
               <br/>
-              <Dropdown.Item eventKey="Done">Done</Dropdown.Item>
+              <Dropdown.Item eventKey="done">Done</Dropdown.Item>
               <Dropdown.Divider />
       </DropdownButton></td>
                     </tr>
