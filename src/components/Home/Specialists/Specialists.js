@@ -5,7 +5,7 @@ import Specialist from './Specialist/Specialist';
 const Specialists = () => {
     const [admins ,setAdmins] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/showAdmin')
+        fetch('https://vast-journey-70627.herokuapp.com/showAdmin')
         .then(res => res.json())
         .then(data => setAdmins(data))
     },[])

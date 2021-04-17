@@ -15,7 +15,7 @@ const handleReviewUpload = (e) => {
     formData.append('description', info.description)
     formData.append('name', info.name)
     formData.append('location', info.location)
-    fetch('http://localhost:5000/setReview', {
+    fetch('https://vast-journey-70627.herokuapp.com/setReview', {
       method: 'POST',
       body: formData
     })

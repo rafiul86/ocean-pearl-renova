@@ -5,12 +5,12 @@ import ServiceData from './ServiceData/ServiceData';
 const RemoveService = () => {
     const [serviceList  , setServiceList ] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/showService')
+        fetch('https://vast-journey-70627.herokuapp.com/showService')
         .then(res =>res.json())
         .then(data => setServiceList(data))
     })
     const handleDelete  = (id)=>{
-        fetch('http://localhost:5000/removeService/'+id ,{
+        fetch('https://vast-journey-70627.herokuapp.com/removeService/'+id ,{
             method : "DELETE"
         })
         .then(res => res.json())

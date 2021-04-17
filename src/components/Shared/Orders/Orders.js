@@ -17,7 +17,7 @@ const Orders = () => {
     const [service ,setService] = useState({})
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/showOneService/`+id)
+        fetch(`https://vast-journey-70627.herokuapp.com/showOneService/`+id)
         .then(res => res.json())
         .then(data => setService(data))
     },[])
@@ -28,10 +28,11 @@ const Orders = () => {
             name : service.name,
             price : service.price,
             email : loggedInUser.email,
-            OrderDate : new Date()
+            OrderDate : new Date() ,
+            status : 'Initiate'
         }
         console.log(orderData)
-        fetch('http://localhost:5000/orderData',{
+        fetch('https://vast-journey-70627.herokuapp.com/orderData',{
             method : 'POST',
             headers : {'content-type' : 'application/json'},
             body : JSON.stringify(orderData)

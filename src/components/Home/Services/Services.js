@@ -6,7 +6,7 @@ import Service from './Service/Service';
 const Services = () => {
     const [services ,setServices] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/showService')
+        fetch('https://vast-journey-70627.herokuapp.com/showService')
         .then(res => res.json())
         .then(data => setServices(data))
     },[])

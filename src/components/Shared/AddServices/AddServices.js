@@ -19,7 +19,7 @@ const handleImageUpload = (e) => {
     formData.append('file', file)
     formData.append('name', services.name)
     formData.append('price', services.price)
-    fetch('http://localhost:5000/addService', {
+    fetch('https://vast-journey-70627.herokuapp.com/addService', {
       method: 'POST',
       body: formData
     })

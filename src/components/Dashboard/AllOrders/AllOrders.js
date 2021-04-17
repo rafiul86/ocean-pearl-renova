@@ -7,7 +7,7 @@ const AllOrders = () => {
     const [loggedInUser ,setLoggedInUser] = useContext(GlobalContext)
     const [orders ,setOrders] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/showOrderHistory',{
+        fetch('https://vast-journey-70627.herokuapp.com/showOrderHistory',{
             method : 'POST',
             headers : {'content-type' : 'application/json'},
             body : JSON.stringify({email : loggedInUser.email})

@@ -4,7 +4,7 @@ const Specialist = ({admin}) => {
     return (
         <section >
             <div class="card" style={{width: "18rem;"}}>
-  <img style={{height : '400px'}} src={`http://localhost:5000/${admin.img}`} class="card-img-top" alt="..."/>
+  <img style={{height : '400px'}} src={`https://vast-journey-70627.herokuapp.com/${admin.img}`} class="card-img-top" alt="..."/>
   <div class="card-body">
     <h3>{admin.name}</h3>
   </div>
