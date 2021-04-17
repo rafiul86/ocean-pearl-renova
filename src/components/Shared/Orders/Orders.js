@@ -29,7 +29,7 @@ const Orders = () => {
             price : service.price,
             email : loggedInUser.email,
             OrderDate : new Date() ,
-            status : 'Initiate'
+            status : 'Pending'
         }
         console.log(orderData)
         fetch('https://vast-journey-70627.herokuapp.com/orderData',{
@@ -41,7 +41,7 @@ const Orders = () => {
         .then(res =>{
             console.log('order details saved to database')
         })
-        history.push('/allorders') 
+        history.push('/pastorders') 
     }
     
     return (

@@ -15,6 +15,9 @@ import Orders from './components/Shared/Orders/Orders';
 import AddServices from './components/Shared/AddServices/AddServices';
 import RemoveService from './components/Dashboard/Admin/RemoveService/RemoveService';
 import AllOrders from './components/Dashboard/AllOrders/AllOrders';
+import PreviousOrders from './components/Dashboard/previousorders/PreviousOrders';
+
+
 
 
 
@@ -37,6 +40,9 @@ function App() {
             </Route>
             <PrivateRoute path='/reviews'>
             <Reviews/>
+            </PrivateRoute>
+            <PrivateRoute path='/pastorders'>
+            <PreviousOrders/>
             </PrivateRoute>
             <PrivateRoute path='/addservice'>
             <AddServices/>
