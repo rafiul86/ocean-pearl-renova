@@ -21,7 +21,7 @@ const Sidebar = () => {
   },[])
     return (
         <div class="sidebar">
-  <Link to='/pastorders'>Previous Orders</Link>
+  <Link to='/previousorders'>Previous Orders</Link>
   <Link to='/reviews'>Rate Our Works</Link>
   { isAdmin &&
    <div>

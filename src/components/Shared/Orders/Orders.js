@@ -41,7 +41,7 @@ const Orders = () => {
         .then(res =>{
             console.log('order details saved to database')
         })
-        history.push('/pastorders') 
+        history.push('/previousorders') 
     }
     
     return (
