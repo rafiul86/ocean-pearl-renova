@@ -14,7 +14,7 @@ const SingleOrders = ({orders}) => {
             <div className="col-md-2">
             <Sidebar/>
             </div>
-            <div style={tableStyle} className="col-md-9">
+            <div style={tableStyle} className="col-md-9 mt-5">
     <table className="table table-responsive">
             <thead>
                 <tr>
