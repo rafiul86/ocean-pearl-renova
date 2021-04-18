@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
 import Sidebar from '../../Sidebar/Sidebar';
@@ -11,21 +11,20 @@ const tableStyle = {
 }
 const ShowOrder = ({orders}) => {
     const [value,setValue]=useState('');
-
-  const handleSelect=(e)=>{
-           setValue(e)
-            }
-            const handleStatus = (id) =>{
-                fetch(`https://vast-journey-70627.herokuapp.com/update/${id}`,{
-                    method : 'PATCH',
-                    headers : {'content-type' : 'application/json'},
-                    body : JSON.stringify({status : value})
-                })
-                .then(res => res.json())
-                .then(data =>{
-                    console.log(data)
-                })
-            }
+    const handleSelect=(e,id)=>{
+        setValue(e)
+        console.log(value,id)
+        fetch(`https://vast-journey-70627.herokuapp.com/update/${id}`,{
+                 method : 'PATCH',
+                 headers : {'Content-Type' : 'application/json'},
+                 body : JSON.stringify({status : value})
+             })
+             .then(res => res.json())
+             .then(data =>{
+                 alert('data status changed')
+             })
+         }
+            
 
     return (
         <div className="row offset-xs-1"> 
@@ -49,8 +48,7 @@ const ShowOrder = ({orders}) => {
             </thead>
             <tbody>
                 {
-                  orders.map((order, index) => 
-                        
+                  orders.map((order, index) =>    
                     <tr>
                         <td>{index + 1}</td>
                         <td>{order.name}</td>
@@ -59,12 +57,11 @@ const ShowOrder = ({orders}) => {
                         <td>{order.OrderDate}KG</td>
                         <td>{order.OrderId}</td>
                         <td>{order.email}</td>
-                        <td><button onClick={()=>handleStatus(order._id)}>Update Status</button></td>
                         <td><DropdownButton
                         alignRight
                         title="Manage Status"
                         id="dropdown-menu-align-right"
-                        onSelect={handleSelect}
+                        onSelect={(e)=>handleSelect(e,order._id)}
         >
               <Dropdown.Item eventKey="pending">Pending</Dropdown.Item>
               <br/>
