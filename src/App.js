@@ -5,7 +5,6 @@ import Home from './components/Home/Home/Home/Home';
 import Login from './components/Login/Login'
 import Trends from './components/Home/Trends/Trends'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import OurServices from './components/Dashboard/OurServices/OurServices';
 import Reviews from './components/Dashboard/Reviews/Reviews';
 import CustomerReviews from './components/Home/CustomerReviews/CustomerReviews';
 import SetAdmin from './components/Dashboard/Admin/SetAdmin';

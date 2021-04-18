@@ -1,5 +1,6 @@
 import { Grid } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import trendy from '../../../images/ren.jpg'
 import trend from '../../../images/reno.jpg'
 import tren from '../../../images/renoi.jpg'
@@ -7,7 +8,7 @@ import tre from '../../../images/ronov.jpg'
 
 const Trends = () => {
     return (
-        <section style={{backgroundColor : "goldenrod"}} className="text-center">
+        <section style={{backgroundColor : 'skyblue'}} className="text-center mt-5 mb-5 ms-5">
           <div>
           <h1 className="mt-5 mb-5" style={{color : 'blue'}}>Whats going on as Current Trends....</h1>
           </div>
@@ -46,6 +47,9 @@ const Trends = () => {
 </div>
 </Grid>
 </Grid>
+          </div>
+          <div>
+            <Link to='/home'>Back to Homepage</Link>
           </div>
        </section>
     );

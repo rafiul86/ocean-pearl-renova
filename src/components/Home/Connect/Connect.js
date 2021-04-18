@@ -4,7 +4,7 @@ import React from 'react';
 const Connect = () => {
     return (
         
-       <section className="contact ms-auto my-5 py-5">
+       <section className="contact ms-auto my-5 py-5" style={{backgroundColor : 'skyblue'}}>
            <div className="container">
                <div className="section-header text-center text-white mb-5">
                     <h2 className="text-primary">Contact</h2>
