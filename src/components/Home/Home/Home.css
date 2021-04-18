@@ -1,4 +1,6 @@
-
+h3 ul li{
+    text-decoration: none;
+}
 
 .image-container{
     background-color: rebeccapurple;
