@@ -23,11 +23,9 @@ const AllOrders = () => {
                 <Sidebar/>
             </div>
                <div className="col-md-10 mt-5">
-               <Grid container spacing={4}>
                     {
-                        orders.map(order => <Grid item xs={12} md={6} lg={4}><ShowOrder order={order}></ShowOrder> </Grid> )
+                        <ShowOrder orders={orders}></ShowOrder> 
                     }
-                </Grid>
                </div>
         </div>
     );

@@ -58,9 +58,10 @@ const SplitCardForm = () => {
         setPaymentSuccess(null);
     }
     else{
-        setPaymentSuccess(paymentMethod);
-        setLoggedInUser(paymentMethod)
-        console.log(paymentMethod)
+      
+        setPaymentSuccess(paymentMethod.id);
+        setLoggedInUser(paymentMethod.id)
+        console.log(paymentMethod.id)
     setPaymentError(null)
     }
   };

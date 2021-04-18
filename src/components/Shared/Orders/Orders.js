@@ -23,8 +23,9 @@ const Orders = () => {
 
     const handleSubmitOrder = () =>{
         const orderData ={
-            OrderId : loggedInUser.card ,
-            name : service.name,
+            OrderId : loggedInUser ,
+            name : loggedInUser.displayName,
+            service : service.name,
             price : service.price,
             email : loggedInUser.email,
             OrderDate : new Date() ,
