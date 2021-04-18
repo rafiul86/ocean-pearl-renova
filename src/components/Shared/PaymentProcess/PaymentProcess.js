@@ -13,7 +13,7 @@ const PaymentProcess = () => {
         <div>
             <Elements stripe={stripePromise}>
             <SplitCardForm/>
-    </Elements>
+             </Elements>
         </div>
     );
 };

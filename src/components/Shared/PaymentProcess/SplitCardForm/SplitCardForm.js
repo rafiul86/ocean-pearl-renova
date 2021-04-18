@@ -63,7 +63,7 @@ const SplitCardForm = () => {
   };
   
   return (
-    <CardContext.Provider >
+    <CardContext.Provider>
         <form onSubmit={handleSubmit} className="label-container" >
       <label >
         Card number
