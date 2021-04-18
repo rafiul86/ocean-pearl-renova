@@ -8,8 +8,8 @@ const Service = ({service}) => {
             <div class="card" style={{width: "18rem;"}}>
   <img style={{height : '400px'}} src={`https://vast-journey-70627.herokuapp.com/${service.img}`} class="card-img-top" alt="..."/>
   <div class="card-body">
-    <h3>{name}</h3>
-    <h3>{price}</h3>
+    <h4>{name}</h4>
+    <h5>Price: ${price}</h5>
     <Link to={`/orders/${_id}`}>Order Now</Link>
     
   </div>
