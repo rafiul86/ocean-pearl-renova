@@ -15,7 +15,6 @@ const Orders = () => {
     const [loggedInUser , setLoggedInUser] = useContext(GlobalContext)
     const {id} = useParams()
     const [service ,setService] = useState({})
-    console.log(loggedInUser)
     useEffect(()=>{
         fetch(`https://vast-journey-70627.herokuapp.com/showOneService/`+id)
         .then(res => res.json())

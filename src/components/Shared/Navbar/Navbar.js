@@ -27,9 +27,6 @@ const Navbar = () => {
           <Link className="nav-link ms-auto me-5 fs-5 text-white fw-bolder" to='/home'>Home</Link>
         </li>
         <li className="nav-item">
-        <Link className="nav-link ms-auto me-5 text-white fs-5 fw-bolder" to='/'>blank</Link>
-        </li>
-        <li className="nav-item">
         <Link className="nav-link ms-auto me-5 fs-5 text-white fw-bolder" to='/reviews'>Review</Link>
         </li>
         <li className="nav-item">
@@ -37,6 +34,9 @@ const Navbar = () => {
         </li>
         <li className="nav-item">
         <Link className="nav-link ms-auto me-5 fs-5 text-white fw-bolder" to='/dashboard'>Dashboard</Link>
+        </li>
+        <li className="nav-item">
+        <Link className="nav-link ms-auto me-5 text-white fs-5 fw-bolder" to='/dashboard'>Admin</Link>
         </li>
         <li className="nav-item">
         {

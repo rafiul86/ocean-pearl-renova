@@ -62,9 +62,9 @@ function App() {
           <Route path="/customerreviews">
           <CustomerReviews/>
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
           <Dashboard/>
-          </Route>
+          </PrivateRoute>
           <Route path="/setadmin">
           <SetAdmin/>
           </Route>

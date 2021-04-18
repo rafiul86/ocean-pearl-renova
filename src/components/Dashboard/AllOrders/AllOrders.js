@@ -9,7 +9,7 @@ const AllOrders = () => {
     useEffect(()=>{
         fetch('https://vast-journey-70627.herokuapp.com/showOrderHistory',{
             method : 'POST',
-            headers : {'content-type' : 'application/json'},
+            headers : {'Content-Type' : 'application/json'},
             body : JSON.stringify({email : loggedInUser.email})
         })
         .then(res =>res.json())

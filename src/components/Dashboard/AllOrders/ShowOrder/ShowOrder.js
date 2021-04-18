@@ -11,19 +11,19 @@ const tableStyle = {
 }
 const ShowOrder = ({orders}) => {
     const [value,setValue]=useState('');
-    const handleSelect=(e,id)=>{
-        setValue(e)
-        console.log(value,id)
-        fetch(`https://vast-journey-70627.herokuapp.com/update/${id}`,{
-                 method : 'PATCH',
-                 headers : {'Content-Type' : 'application/json'},
-                 body : JSON.stringify({status : value})
-             })
-             .then(res => res.json())
-             .then(data =>{
-                 alert('data status changed')
-             })
-         }
+        const handleSelect=(e,id)=>{
+           setValue(e)
+           console.log(value,id)
+           fetch(`https://vast-journey-70627.herokuapp.com/update/${id}`,{
+                    method : 'PATCH',
+                    headers : {'Content-Type' : 'application/json' },
+                    body : JSON.stringify({status : value})
+                })
+                .then(res => res.json())
+                .then(data =>{
+                    alert('data status changed')
+                })
+            }
             
 
     return (
@@ -39,11 +39,11 @@ const ShowOrder = ({orders}) => {
                 <th className="text-secondary" scope="col">Name</th>
                 <th className="text-secondary" scope="col">Price</th>
                 <th className="text-secondary" scope="col">Status</th>
-                <th className="text-secondary" scope="col">Date</th>
-                <th className="text-secondary" scope="col">Payment ID</th>
+                <th className="text-secondary" scope="col">Order Date</th>
+                <th className="text-secondary" scope="col">Payment Id</th>
                 <th className="text-secondary" scope="col">Email</th>
                 <th className="text-secondary" scope="col">Change Status</th>
-                <th className="text-secondary" scope="col">Action</th>
+                
                 </tr>
             </thead>
             <tbody>
@@ -54,9 +54,10 @@ const ShowOrder = ({orders}) => {
                         <td>{order.name}</td>
                         <td>{order.price}</td>
                         <td>{order.status}</td>
-                        <td>{order.OrderDate}KG</td>
+                        <td>{new Date(order.OrderDate).toDateString("dd/MM/yyyy")}</td>
                         <td>{order.OrderId}</td>
                         <td>{order.email}</td>
+                        {/* <td><button onClick={()=>handleStatus(order._id)}>Update Status</button></td> */}
                         <td><DropdownButton
                         alignRight
                         title="Manage Status"

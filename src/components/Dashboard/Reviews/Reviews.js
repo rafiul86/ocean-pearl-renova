@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Reviews = () => {
     const [info , setInfo] = useState([])
@@ -29,7 +30,11 @@ const handleReviewUpload = (e) => {
   }
   console.log(info)
     return (
-        <section>
+        <section className="row">
+           <div className="col-md-2">
+            <Sidebar/>
+           </div>
+           <div className="col-md-9 mt-5">
            <form onSubmit={handleReviewUpload}>
   <div className="mb-3">
     <label htmlFor="exampleInputEmail1"  className="form-label">Location</label>
@@ -45,6 +50,7 @@ const handleReviewUpload = (e) => {
          <br/>
   <button type="submit" className="btn btn-primary">Submit</button>
 </form> 
+           </div>
         </section>
     );
 };

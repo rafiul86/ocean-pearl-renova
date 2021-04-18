@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Sidebar from '../Sidebar/Sidebar';
 
 const SetAdmin = () => {
     const [info , setInfo] = useState([])
@@ -33,7 +34,11 @@ const handleImageUpload = (e) => {
   }
   console.log(file ,info)
     return (
-        <section>
+        <section className="row">
+           <div className="col-md-2">
+            <Sidebar/>
+           </div>
+           <div className="col-md-9 mt-5">
            <form onSubmit={handleImageUpload}>
   <div className="mb-3">
     <label htmlFor="exampleInputEmail1"  className="form-label">Email address</label>
@@ -49,6 +54,7 @@ const handleImageUpload = (e) => {
   </div>
   <button type="submit" className="btn btn-primary">Submit</button>
 </form> 
+           </div>
         </section>
     );
 };
