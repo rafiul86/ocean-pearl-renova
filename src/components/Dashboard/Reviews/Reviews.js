@@ -8,7 +8,7 @@ const handleBlur=(e) =>{
     const newInfo = {...info}
     newInfo[e.target.name] = e.target.value ;
     setInfo(newInfo)
-    console.log(newInfo)
+    alert('Thanks for the Review.')
 }
 const handleReviewUpload = (e) => {
     e.preventDefault()
@@ -28,7 +28,6 @@ const handleReviewUpload = (e) => {
       console.error(error)
     })
   }
-  console.log(info)
     return (
         <section className="row">
            <div className="col-md-2">

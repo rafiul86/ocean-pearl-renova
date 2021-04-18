@@ -1,6 +1,8 @@
+import { Grid } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { GlobalContext } from '../../../App';
+import Sidebar from '../Sidebar/Sidebar';
 import ShowOrder from './ShowOrder/ShowOrder';
 
 const AllOrders = () => {
@@ -16,8 +18,17 @@ const AllOrders = () => {
         .then(data => setOrders(data))
     },[])
     return (
-        <div>
-                 <ShowOrder orders={orders}></ShowOrder>
+        <div className="row offset-xs-1">
+            <div className="col-md-2">
+                <Sidebar/>
+            </div>
+               <div className="col-md-10 mt-5">
+               <Grid container spacing={4}>
+                    {
+                        orders.map(order => <Grid item xs={12} md={6} lg={4}><ShowOrder order={order}></ShowOrder> </Grid> )
+                    }
+                </Grid>
+               </div>
         </div>
     );
 };

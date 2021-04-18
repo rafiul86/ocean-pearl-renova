@@ -56,8 +56,12 @@ const Google = () => {
           });
     }
     const handleToken = () =>{
-      sessionStorage.setItem('token' , loggedInUser.email)
-    }
+      firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+          sessionStorage.setItem('token' ,idToken)
+        }).catch(function(error) {
+          console.log(error)
+        });
+  }
     return (
         <div>
           {

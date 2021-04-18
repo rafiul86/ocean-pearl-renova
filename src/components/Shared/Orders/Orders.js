@@ -30,7 +30,6 @@ const Orders = () => {
             OrderDate : new Date() ,
             status : 'pending'
         }
-        console.log(orderData)
         fetch('https://vast-journey-70627.herokuapp.com/orderData',{
             method : 'POST',
             headers : {'content-type' : 'application/json'},
