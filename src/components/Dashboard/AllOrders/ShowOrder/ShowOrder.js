@@ -28,7 +28,7 @@ const ShowOrder = ({orders}) => {
     return (
         <div>
 
-<table className="table table-borderless">
+<table style={tableStyle} className="table table-responsive">
             <thead>
                 <tr>
                 <th className="text-secondary text-left" scope="col">Sr No</th>

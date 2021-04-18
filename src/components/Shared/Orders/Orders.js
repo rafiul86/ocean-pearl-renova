@@ -6,7 +6,8 @@ import { useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 import { GlobalContext } from '../../../App';
 import PaymentProcess from '../PaymentProcess/PaymentProcess';
-import { CardContext } from '../PaymentProcess/SplitCardForm/SplitCardForm';
+
+
 
 
 
@@ -23,7 +24,6 @@ const Orders = () => {
 
     const handleSubmitOrder = () =>{
         const orderData ={
-            OrderId : loggedInUser ,
             name : loggedInUser.name,
             service : service.name,
             price : service.price,

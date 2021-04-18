@@ -4,10 +4,10 @@ import '../PaymentProcess'
 import useResponsiveFontSize from '../useResponsiveFontSize';
 import { Button } from "@material-ui/core";
 import '../paymentstyle.css'
-import { GlobalContext } from "../../../../App";
 
 
 
+export const CardContext = createContext()
 const useOptions = () => {
   const fontSize = useResponsiveFontSize();
   const options = useMemo(
@@ -34,8 +34,8 @@ const useOptions = () => {
 };
 
 const SplitCardForm = () => {
-    const [paymentError , setPaymentError] = useState(null)
-    const [paymentSuccess , setPaymentSuccess] = useState(null)
+    const [paymentError , setPaymentError] = useState('')
+    const [paymentSuccess , setPaymentSuccess] = useState('')
   const stripe = useStripe();
   const elements = useElements();
   const options = useOptions();
@@ -57,14 +57,13 @@ const SplitCardForm = () => {
         setPaymentSuccess(null);
     }
     else{
-      
         setPaymentSuccess(paymentMethod);
-        console.log(paymentMethod.id)
-    setPaymentError(null)
+         setPaymentError(null)
     }
   };
+  
   return (
-    <div>
+    <CardContext.Provider >
         <form onSubmit={handleSubmit} className="label-container" >
       <label >
         Card number
@@ -95,7 +94,7 @@ const SplitCardForm = () => {
     {
         paymentSuccess && <p style={{color : 'green'}}>Your payment is successful and reference is {paymentSuccess.id}</p>
     }
-    </div>
+    </CardContext.Provider>
   );
 };
 
