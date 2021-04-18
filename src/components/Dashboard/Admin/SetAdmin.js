@@ -32,7 +32,6 @@ const handleImageUpload = (e) => {
       console.error(error)
     })
   }
-  console.log(file ,info)
     return (
         <section className="row">
            <div className="col-md-2">

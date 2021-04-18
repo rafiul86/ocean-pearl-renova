@@ -12,34 +12,34 @@ const Footer = () => {
     const [loggedInUser , setLoggedInUser] = useContext(GlobalContext)
     const history = useHistory()
     const noNamed = [
-        {name: "Emergency Dental Care" , link: "/emergency"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Treatment of Personal Diseases" , link: "/personal-treatment"},
-        {name: "Tooth Extraction" , link: "/tooth-extract"},
-        {name: "Check Up" , link: "/checkup"},
+        {name: "Emergency Repairing" , link: "/emergency"},
+        {name: "Build Up" , link: "/buildup"},
+        {name: "Repairing of Personal Buildings" , link: "/personal"},
+        {name: "Scaffolding" , link: "/contactual"},
+        {name: "Large Storey Repair" , link: "/meetup"},
     ]
     const ourAddress = [
-        {name: "New York - 101010 Hudson" , link: "//google.com/map"},
-        {name: "Yards" , link: "//google.com/map"},
+        {name: "pandan -gardens - west coast Singapore" , link: "//google.com/map"},
+        {name: "Courts" , link: "//google.com/map"},
        
     ]
-    const oralHealth = [
-        {name: "Emergency Dental Care" , link: "/emergency"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Treatment of Personal Diseases" , link: "/personal-treatment"},
-        {name: "Tooth Extraction" , link: "/tooth-extract"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"}
+    const Renovation = [
+        {name: "High Rise Repair" , link: "/emergency"},
+        {name: "Repair" , link: "/manual"},
+        {name: "Painting" , link: "/manual"},
+        {name: "Metal Works" , link: "/manual"},
+        {name: "Wooden Repair" , link: "/manual"},
+        {name: "Painting-inside" , link: "/manual"},
+        {name: "Roof Works" , link: "/manual"}
     ]
     const services = [
-        {name: "Emergency Dental Care" , link: "/emergency"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Treatment of Personal Diseases" , link: "/personal-treatment"},
-        {name: "Tooth Extraction" , link: "/tooth-extract"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"}
+        {name: "Company Service" , link: "/emergency"},
+        {name: "Renovation" , link: "/manual"},
+        {name: "Personal Contract" , link: "/Renovation"},
+        {name: "Demolition works" , link: "/tooth-extract"},
+        {name: "Renovation" , link: "/manual"},
+        {name: "Renovation" , link: "/manual"},
+        {name: "Renovation" , link: "/manual"}
     ]
     const  user = firebase.auth().currentUser;
         const handleRemoveUser = () =>{
@@ -62,7 +62,7 @@ const Footer = () => {
                 <div className="row py-5">
                     <FooterColumn key={1} menuTitle={"."} menuItems={noNamed}/>
                     <FooterColumn key={2} menuTitle="Services" menuItems={services}/>
-                    <FooterColumn key={3} menuTitle="Oral Health" menuItems={oralHealth}/>
+                    <FooterColumn key={3} menuTitle="Renovation" menuItems={Renovation}/>
                     <FooterColumn key={4} menuTitle="Our Address" menuItems={ourAddress}> 
                         <ul className="social-media list-inline">
                             <li className="list-inline-item"><a href="//facebook.com"><FontAwesomeIcon className="icon active-icon" icon={faFacebookF} /></a></li>
@@ -71,7 +71,7 @@ const Footer = () => {
                         </ul>
                         <div className="mt-5">
                             <h6>Call now</h6>
-                            <button className="btn btn-primary">+65-98765-89776</button>
+                            <button className="btn btn-primary">+65-8741-1290</button>
                             <p style={{cursor : 'pointer'}} onClick={handleRemoveUser}>Delete User Account</p>
                         </div>
                     </FooterColumn>
