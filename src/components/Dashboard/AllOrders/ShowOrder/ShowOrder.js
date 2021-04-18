@@ -37,6 +37,7 @@ const ShowOrder = ({orders}) => {
                 <th className="text-secondary" scope="col">Date</th>
                 <th className="text-secondary" scope="col">Payment Method</th>
                 <th className="text-secondary" scope="col">Email</th>
+                <th className="text-secondary" scope="col">Current Status</th>
                 <th className="text-secondary" scope="col">Manage Status</th>
                 </tr>
             </thead>
@@ -49,9 +50,10 @@ const ShowOrder = ({orders}) => {
                         <td>{order.name}</td>
                         <td>{order.service}</td>
                         <td>{order.price}</td>
-                        <td>{new Date(order.OrderDate).toDateString('dd/MM/yyyy')}KG</td>
+                        <td>{new Date(order.OrderDate).toDateString('dd/MM/yyyy')}</td>
                         <td>Card</td>
                         <td>{order.email}</td>
+                        <td>{order.status}</td>
                         <td><DropdownButton alignRight title="Manage Status" id="dropdown-menu-align-right"
                          onSelect={(e)=>handleSelect(e,order._id)}>
                         <Dropdown.Item eventKey="pending">Pending</Dropdown.Item>

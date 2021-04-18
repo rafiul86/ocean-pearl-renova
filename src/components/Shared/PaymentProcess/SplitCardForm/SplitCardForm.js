@@ -34,7 +34,6 @@ const useOptions = () => {
 };
 
 const SplitCardForm = () => {
-    const [loggedInUser , setLoggedInUser] = useContext(GlobalContext)
     const [paymentError , setPaymentError] = useState(null)
     const [paymentSuccess , setPaymentSuccess] = useState(null)
   const stripe = useStripe();
@@ -59,8 +58,7 @@ const SplitCardForm = () => {
     }
     else{
       
-        setPaymentSuccess(paymentMethod.id);
-        setLoggedInUser(paymentMethod.id)
+        setPaymentSuccess(paymentMethod);
         console.log(paymentMethod.id)
     setPaymentError(null)
     }
