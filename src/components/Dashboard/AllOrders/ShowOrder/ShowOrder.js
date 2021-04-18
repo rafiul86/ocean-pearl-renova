@@ -34,6 +34,7 @@ const ShowOrder = ({orders}) => {
                 <th className="text-secondary text-left" scope="col">Sr No</th>
                 <th className="text-secondary" scope="col">Name</th>
                 <th className="text-secondary" scope="col">Service</th>
+                <th className="text-secondary" scope="col">Price</th>
                 <th className="text-secondary" scope="col">Date</th>
                 <th className="text-secondary" scope="col">Payment Method</th>
                 <th className="text-secondary" scope="col">Email</th>
@@ -53,7 +54,9 @@ const ShowOrder = ({orders}) => {
                         <td>{new Date(order.OrderDate).toDateString('dd/MM/yyyy')}</td>
                         <td>Card</td>
                         <td>{order.email}</td>
-                        <td>{order.status}</td>
+                        <td>{
+                         order.status === 'pending'  ? <td style={{backgroundColor : 'red' ,borderRadius : '5px', height : '20px' , width  : '40px'}}>{order.status}</td> : <td style={{backgroundColor : 'lawngreen' , borderRadius : '5px' , height : '20px' , width  : '40px'}}>{order.status}</td>
+                        }</td>
                         <td><DropdownButton alignRight title="Manage Status" id="dropdown-menu-align-right"
                          onSelect={(e)=>handleSelect(e,order._id)}>
                         <Dropdown.Item eventKey="pending">Pending</Dropdown.Item>
