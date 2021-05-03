@@ -9,16 +9,24 @@
 2. compare the price with others.
 3. Track order by client.
 4. Google authenticated security system.
+5. The best solution for the owner of retail shop those is willing to expand their business in local online-based customer.
+6. Complete Sign-in functionality with Google Firebase extended with reset or forget the password, new customer registration.
+7. Update, Delete, Add product by  admin using separate panel.
+8. Order Tracking And monitoring real-time basis.
 
 __Beside this you may find it better in many other ways__
 
 
 This is the website [https://login-form-6274e.web.app/](https://login-form-6274e.web.app/) to view it in the browser.
 
-> Developer option : use this to make functionality
 
-```javascript
-function myFunc(a,b){
-    return a + b ;
-}
+
 ```
+
+
+
+
+
+
+```
+## Tech used: React, React-Router, Hooks, Context API, Google Map, MongoDB, Heroku, Google Firebase, Material UI and Redux.js
